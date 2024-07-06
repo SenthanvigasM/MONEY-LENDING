@@ -21,7 +21,7 @@ function Login() {
         if (result.data.message === "Login successful") {
           console.log("Login successful");
           localStorage.setItem('loggedInUserEmail', result.data.email);
-          navigate('/lent');
+          navigate('https://loaneds.vercel.app/lent');
         } else {
           setError('Invalid email or password. Please try again.');
         }
@@ -52,12 +52,14 @@ function Login() {
           </div>
           <button type="submit">Sign in</button>
           <div className={styles['sign-up']}>
-            Not a member? <Link to="/register">Signup</Link>
+            Not a member? <Link to="https://loaneds.vercel.app/register">Signup</Link>
           </div>
         </form>
       </div>
     </div>
   );
 }
+
+
 
 export default Login;
