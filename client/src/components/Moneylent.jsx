@@ -100,7 +100,7 @@ function Moneylent() {
         </tbody>
       </table>
       <div className={styles['logout-link']}>
-        <Link to={'/login'}>Logout</Link>
+        <Link to={'https://loaneds.vercel.app/login'}>Logout</Link>
       </div>
     </div>
   );
