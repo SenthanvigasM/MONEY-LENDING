@@ -37,7 +37,7 @@ function Signup() {
           setError(response.data.message);
         } else {
           console.log(response.data);
-          navigate('/login');
+          navigate('https://loaneds.vercel.app/login');
         }
       })
       .catch(err => {
@@ -66,7 +66,7 @@ function Signup() {
           </div>
           <button type="submit">Register</button>
           <div className={styles['sign-in']}>
-            Already have an account? <Link to="/login">Login</Link>
+            Already have an account? <Link to="https://loaneds.vercel.app/login">Login</Link>
           </div>
         </form>
       </div>
