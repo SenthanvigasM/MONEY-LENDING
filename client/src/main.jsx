@@ -9,10 +9,10 @@ import App from './App';
 const Root = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/lent" element={<Moneylent />} />
-      <Route path="/register" element={<Signup />} />
+      <Route path="https://loaneds.vercel.app/" element={<App />} />
+      <Route path="https://loaneds.vercel.app/login" element={<Login />} />
+      <Route path="https://loaneds.vercel.app/lent" element={<Moneylent />} />
+      <Route path="https://loaneds.vercel.app/register" element={<Signup />} />
     </Routes>
   </Router>
 );
