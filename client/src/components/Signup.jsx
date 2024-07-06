@@ -9,6 +9,7 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ function Signup() {
       return;
     }
 
-    axios.post('http://localhost:3001/register', { name, email, password })
+    axios.post('https://loaneds.vercel.app/register', { name, email, password })
       .then(response => {
         if (response.data.error) {
           setError(response.data.message);
