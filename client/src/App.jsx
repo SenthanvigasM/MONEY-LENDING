@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
       <Link
-        to="/login"
+        to="https://loaneds.vercel.app/login"
         style={{
           textDecoration: 'none',
           padding: '10px 20px',
