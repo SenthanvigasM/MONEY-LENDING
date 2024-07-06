@@ -10,6 +10,7 @@ function Moneylent() {
   const [reason, setReason] = useState('');
   const [entries, setEntries] = useState([]);
   const [editId, setEditId] = useState(null);
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     fetchEntries();
@@ -18,7 +19,7 @@ function Moneylent() {
   const fetchEntries = async () => {
     try {
       const userEmail = localStorage.getItem('loggedInUserEmail');
-      const response = await axios.get(`http://localhost:3001/lent?email=${userEmail}`);
+      const response = await axios.get(`https://loaneds.vercel.app/lent?email=${userEmail}`);
       setEntries(response.data);
     } catch (error) {
       console.error('Error fetching entries:', error);
@@ -30,10 +31,10 @@ function Moneylent() {
     const newEntry = { name, date, amount, reason, email: localStorage.getItem('loggedInUserEmail') };
     try {
       if (editId) {
-        await axios.put(`http://localhost:3001/lent/${editId}`, newEntry);
+        await axios.put(`https://loaneds.vercel.app/lent/${editId}`, newEntry);
         setEditId(null);
       } else {
-        await axios.post('http://localhost:3001/lent', newEntry);
+        await axios.post('https://loaneds.vercel.app/lent', newEntry);
       }
       fetchEntries();
       setName('');
@@ -55,7 +56,7 @@ function Moneylent() {
   
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/lent/${id}`);
+      await axios.delete(`https://loaneds.vercel.app/lent/${id}`);
       fetchEntries();
     } catch (error) {
       console.error('Error deleting entry:', error);
